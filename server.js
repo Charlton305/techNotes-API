@@ -4,12 +4,12 @@ const app = express()
 const path = require("path")
 const cookieParser = require("cookie-parser")
 const cors = require("cors")
+const mongoose = require("mongoose")
 
 const { logger, logEvents } = require("./middleware/logger.js")
 const errorHandler = require("./middleware/errerHandler.js")
 const corsOptions = require("./config/corsOptions.js")
 const connectDB = require("./config/dbConn.js")
-const mongoose = require("mongoose")
 const PORT = process.env.PORT || 3500
 
 connectDB()
@@ -25,8 +25,8 @@ app.use(cookieParser())
 app.use("/", express.static(path.join(__dirname, "public/")))
 
 app.use("/", require("./routes/root.js"))
-
 app.use("/users", require("./routes/userRoutes"))
+app.use("/notes", require("./routes/noteRoutes"))
 
 app.all("*", (req, res) => {
   res.status(404)
