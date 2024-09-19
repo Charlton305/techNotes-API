@@ -13,7 +13,7 @@ const logEvents = async (message, logFileName) => {
   try {
     // Check if logs folder exists and create if not
     if (!fs.existsSync(path.join(__dirname, "..", "logs"))) {
-      await fsPromises.mkdir(path.join(__dirname), "..", "logs")
+      await fsPromises.mkdir(path.join(__dirname, "..", "logs"))
     }
     // Create log file if it doesnt exists and add log inside file
     await fsPromises.appendFile(path.join(__dirname, "..", "logs",
