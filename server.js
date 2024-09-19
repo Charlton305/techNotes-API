@@ -16,7 +16,7 @@ connectDB()
 
 app.use(logger)
 
-app.use(cors({origin: "*", credentials: true}))
+app.use(cors(corsOptions))
 
 app.options('*', cors())
 
