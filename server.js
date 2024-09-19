@@ -16,9 +16,9 @@ connectDB()
 
 app.use(logger)
 
-app.use(cors({ origin: '*' }))
+app.use(cors({origin: "*", credentials: true}))
 
-app.options('*', cors()); // Allow preflight for all routes
+app.options('*', cors())
 
 app.use(express.json())
 
