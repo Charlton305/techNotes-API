@@ -16,7 +16,7 @@ connectDB()
 
 app.use(logger)
 
-app.use(cors(corsOptions))
+app.use(cors({ origin: '*' }))
 
 app.use(express.json())
 
