@@ -16,10 +16,7 @@ connectDB()
 
 app.use(logger)
 
-app.use(cors({ origin: 'https://technotes-yb3t.onrender.com' }));
-app.use(cors({ origin: 'https://technotes-yb3t.onrender.com/login' }));
-
-// app.use(cors({ origin: '*' }))
+app.use(cors({ origin: '*' }))
 
 app.options('*', cors()); // Allow preflight for all routes
 
