@@ -69,7 +69,6 @@ const updateNote = asyncHandler(async (req, res) => {
   }
 
   const note = await Note.findById(id).exec()
-  console.log("got note")
 
   if (!note) {
     return res.status(400).json({ message: "Note not found" })
