@@ -18,6 +18,8 @@ app.use(logger)
 
 app.use(cors({ origin: '*' }))
 
+app.options('*', cors()); // Allow preflight for all routes
+
 app.use(express.json())
 
 app.use(cookieParser())
